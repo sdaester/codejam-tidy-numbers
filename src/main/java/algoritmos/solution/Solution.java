@@ -28,8 +28,40 @@ public class Solution implements FromScannedLineToLine{
   public long lastTidy(long i) {
     long n = i;
     while (!isTidy(n)){
-      n -=1;
+      n = optimizeNext(n);
     }
     return n;
+  }
+
+  private long optimizeNext(Long n) {
+
+    char[] all = n.toString().toCharArray();
+
+    for(int i =0 ; i < all.length; i++){
+      int current = Character.getNumericValue(all[i]);
+      int next = Character.getNumericValue(all[i+1]);
+      if(current > next){
+        String newNumber="";
+        for(int j=0; j<i; j++){
+          newNumber += all[j];
+        }
+        newNumber += current-1;
+        for(int j=i+1; j<all.length; j++){
+          newNumber += 9;
+        }
+        return Long.valueOf(newNumber);
+      }
+    }
+
+    return n-1;
+  }
+
+  protected long firstDigit(long n) {
+    long i;
+    for (i = n; i >= 10 ; ) {
+      i = i / 10;
+    }
+    return i;
+
   }
 }

@@ -76,8 +76,23 @@ public class SolutionTest {
   }
 
 
+  @Test
+  public void lasTidy56481(){
+    assertThat(solution.lastTidy(56481)).isEqualTo(55999);
+  }
 
+  @Test
+  public void lasTidy56729(){
+    assertThat(solution.lastTidy(56729)).isEqualTo(56699);
+  }
 
+  @Test
+  public void firsDigit2Digits(){
+    assertThat(solution.firstDigit(10)).isEqualTo(1);
+  }
 
-
+  @Test
+  public void firsDigit3Digits(){
+    assertThat(solution.firstDigit(310)).isEqualTo(3);
+  }
 }
