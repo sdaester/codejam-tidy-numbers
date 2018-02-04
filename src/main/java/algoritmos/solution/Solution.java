@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Solution implements FromScannedLineToLine{
   public String process(Scanner in) {
-    return "out";
+    return this.lastTidy(in.nextLong()).toString();
   }
 
   public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class Solution implements FromScannedLineToLine{
     return true;
   }
 
-  public long lastTidy(long i) {
+  public Long lastTidy(long i) {
     long n = i;
     while (!isTidy(n)){
       n = optimizeNext(n);

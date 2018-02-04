@@ -57,17 +57,17 @@ public class SolutionTest {
 
   @Test
   public void lasTidy220(){
-    assertThat(solution.lastTidy(220)).isEqualTo(199);
+    assertThat(solution.lastTidy(220)).isEqualTo(199L);
   }
 
   @Test
   public void lasTidy999(){
-    assertThat(solution.lastTidy(1000)).isEqualTo(999);
+    assertThat(solution.lastTidy(1000)).isEqualTo(999L);
   }
 
   @Test
   public void lasTidy7(){
-    assertThat(solution.lastTidy(7)).isEqualTo(7);
+    assertThat(solution.lastTidy(7)).isEqualTo(7L);
   }
 
   @Test
@@ -78,12 +78,12 @@ public class SolutionTest {
 
   @Test
   public void lasTidy56481(){
-    assertThat(solution.lastTidy(56481)).isEqualTo(55999);
+    assertThat(solution.lastTidy(56481)).isEqualTo(55999L);
   }
 
   @Test
   public void lasTidy56729(){
-    assertThat(solution.lastTidy(56729)).isEqualTo(56699);
+    assertThat(solution.lastTidy(56729)).isEqualTo(56699L);
   }
 
   @Test
