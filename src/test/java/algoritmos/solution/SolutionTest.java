@@ -14,9 +14,70 @@ public class SolutionTest {
   }
 
   @Test
-  public void foo(){
-    //repace with real test case
-    assertThat(solution.process(null)).isEqualTo("out");
+  public void oneDigitIsTidy(){
+    assertThat(solution.isTidy(7)).isTrue();
   }
+
+  @Test
+  public void twoDigitAscendingIsTidy(){
+    assertThat(solution.isTidy(17)).isTrue();
+  }
+
+  @Test
+  public void twoDigitAscendingIsUntidy(){
+    assertThat(solution.isTidy(10)).isFalse();
+  }
+
+
+  @Test
+  public void sameDigitIsTidy(){
+    assertThat(solution.isTidy(22)).isTrue();
+  }
+
+  @Test
+  public void decrescenseDigitIsUntidy(){
+    assertThat(solution.isTidy(32)).isFalse();
+  }
+
+
+  @Test
+  public void lasTidy132(){
+    assertThat(solution.lastTidy(132)).isEqualTo(129);
+  }
+
+  @Test
+  public void isTidy132(){
+    assertThat(solution.isTidy(132)).isFalse();
+  }
+
+  @Test
+  public void isTidy219(){
+    assertThat(solution.isTidy(219)).isFalse();
+  }
+
+  @Test
+  public void lasTidy220(){
+    assertThat(solution.lastTidy(220)).isEqualTo(199);
+  }
+
+  @Test
+  public void lasTidy999(){
+    assertThat(solution.lastTidy(1000)).isEqualTo(999);
+  }
+
+  @Test
+  public void lasTidy7(){
+    assertThat(solution.lastTidy(7)).isEqualTo(7);
+  }
+
+  @Test
+  public void lasTidy111111111111111110(){
+    assertThat(solution.lastTidy(111111111111111110L)).isEqualTo(99999999999999999L);
+  }
+
+
+
+
+
 
 }
